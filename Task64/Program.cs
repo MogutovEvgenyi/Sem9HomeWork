@@ -1,17 +1,17 @@
-﻿int InputNum(string text)
-{
-    Console.Write(text);
-    return int.Parse(Console.ReadLine()!);
-}
-void PrintNumbers(int n)
-{
-    if (n > 0)
-    {
-        Console.Write(n + " ");
-        PrintNumbers(n - 1);
+﻿Console.Write("Введите число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+int count = 1;
+NaturalToLow(number, count);
 
+void NaturalToLow(int n, int count)
+{
+    if (count > n)
+    {
+        return;
+    }
+    else
+    {
+        NaturalToLow(n, count + 1);
+        Console.Write(count + " ");
     }
 }
-//
-int number = InputNum("Введите число: ");
-PrintNumbers(number);
